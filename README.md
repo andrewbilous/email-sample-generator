@@ -68,27 +68,21 @@ This is a monorepo. It has two folders:
 
 This is a solution to the AI Engineer coding task provided by Instantly.AI.
 
+
 ### What’s implemented:
- Implemented Features
-
-📥 Email UI
-	•	Sidebar list of saved emails (Apple Mail style)
-	•	Detail view of selected email (with subject/body preview)
-	•	“Compose Email” modal with:
-	•	To, CC, BCC, Subject, Body fields
-	•	Client-side validation for required fields (To, Subject)
-	•	Snackbar feedback on success/error
-	•	MUI-based responsive design
-
-🤖 AI-Powered Email Generator
-	•	“AI ✨” button opens a prompt modal
-	•	Prompt classified via router assistant (sales or followup)
-	•	Appropriate assistant generates email (via OpenAI)
-	•	Sales emails are <40 words, concise, high-impact
-	•	Follow-up emails are polite and reference previous interactions
-	•	Streaming-style logic to auto-fill Subject and Body, editable by user
-	•	Loading spinner while generating
-	•	Error handling via Snackbar
+	•	Sidebar with list of saved emails (Apple Mail style)
+	•	Detail view of selected email (subject and body preview)
+	•	Compose Email modal with fields: To / CC / BCC / Subject / Body
+	•	Field validation for required inputs (To, Subject)
+	•	Snackbar feedback on success/error (save & AI errors)
+	•	Floating “+” button to open the Compose modal
+	•	“AI ✨” button opens a prompt modal for automatic draft generation
+	•	AI router classifies prompt as sales or follow-up using OpenAI
+	•	Specialized assistants generate subject & body based on prompt
+	•	Loading spinner shown while generating AI email
+	•	Generated subject & body auto-fill inputs (user-editable)
+	•	Modularized Compose modal: PromptModal, EmailFields, SnackbarAlert
+	•	Data stored in SQLite (Fastify + Knex backend)
 
 ⸻
 
