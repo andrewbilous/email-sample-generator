@@ -69,13 +69,33 @@ This is a monorepo. It has two folders:
 This is a solution to the AI Engineer coding task provided by Instantly.AI.
 
 ### What’s implemented:
-- [x] Sidebar with email list (Apple Mail style)
-- [x] Detail view of selected email
-- [x] Compose email modal with To/CC/BCC/Subject/Body
-- [x] Floating “+” button to create new email
-- [x] “AI ✨” button that generates subject & body based on user prompt
-- [x] AI router for “sales” and “follow-up” logic
-- [x] Data stored in SQLite (via Fastify backend + Knex)
+ Implemented Features
+
+📥 Email UI
+	•	Sidebar list of saved emails (Apple Mail style)
+	•	Detail view of selected email (with subject/body preview)
+	•	“Compose Email” modal with:
+	•	To, CC, BCC, Subject, Body fields
+	•	Client-side validation for required fields (To, Subject)
+	•	Snackbar feedback on success/error
+	•	MUI-based responsive design
+
+🤖 AI-Powered Email Generator
+	•	“AI ✨” button opens a prompt modal
+	•	Prompt classified via router assistant (sales or followup)
+	•	Appropriate assistant generates email (via OpenAI)
+	•	Sales emails are <40 words, concise, high-impact
+	•	Follow-up emails are polite and reference previous interactions
+	•	Streaming-style logic to auto-fill Subject and Body, editable by user
+	•	Loading spinner while generating
+	•	Error handling via Snackbar
+
+⸻
+
+🧱 Tech Stack
+	•	Frontend: Next.js 14, React 18, MUI 5
+	•	Backend: Fastify, Knex, SQLite
+	•	LLM: OpenAI API (gpt-4o-mini used via classification + generation)
 
 ### Not included:
 - Real LLM model integration (used mock response for AI generation)
